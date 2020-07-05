@@ -6,3 +6,9 @@
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium maxime ipsam natus odio modi.</p>
     </section>
 </template>
+
+<script>
+export default {
+    middleware: ['auth']
+}
+</script>

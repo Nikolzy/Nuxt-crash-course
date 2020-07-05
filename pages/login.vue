@@ -1,6 +1,9 @@
 <template>
     <section>
-        <form action="">
+        <div v-if="$route.query.message" class="alert alert-danger mb-3">
+            Need login first
+        </div>
+        <form action="" @submit.prevent="handleSubmit">
             <h1>Login page</h1>
             <div class="form-group">
                 <input type="text" class="form-control">
@@ -17,7 +20,13 @@
 
 <script>
 export default {
-    layout: 'empty'
+    layout: 'empty',
+    methods: {
+        handleSubmit() {
+            this.$store.dispatch('login');
+            this.$router.push('/');
+        }
+    }
 }
 </script>
 
